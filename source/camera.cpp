@@ -6,7 +6,7 @@ Camera::Camera ( const glm::vec3& p_position ) : m_position ( p_position ) { }
 
 glm::mat4 Camera::get_view_matrix ( ) const
 {
-	return glm::translate ( glm::mat4 ( 1.0f ), m_position );
+	return glm::lookAt ( m_position, glm::vec3 ( 0.0, 0.0, 0.0 ), glm::vec3 ( 0.0f, 1.0f, 0.0f ) );
 }
 
 void Camera::set_position ( const glm::vec3& p_position )

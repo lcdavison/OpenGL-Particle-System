@@ -155,7 +155,7 @@ void ParticleSystem::render ( const Camera& p_camera )
 	( m_texture_ptr == nullptr ) ? m_colour_shader->begin ( ) : m_texture_shader->begin ( );
 
 	//	Compute view and perspective matrices
-	glm::mat4 view  	= glm::lookAt ( p_camera.get_position ( ), glm::vec3 ( 0.0, 0.0, 0.0 ), glm::vec3 ( 0.0f, 1.0f, 0.0f ) );
+	glm::mat4 view  	= p_camera.get_view_matrix ( );
 	glm::mat4 perspective 	= glm::perspective ( glm::radians ( 60.0f ), ( float ) ( 1280 ) / ( float ) ( 720 ), 0.1f, 100.0f );
 
 	//	Get active program
