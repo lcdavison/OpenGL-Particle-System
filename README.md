@@ -10,7 +10,7 @@ To compile and run the program on Windows the following software is required:
 
 ### Using CMake
 1. Set the source directory to the directory containing the **CMakeLists.txt** file.
-![](../images/source-build.png)
+![](../images/source-build.PNG)
 2. Click *Configure* and select *MinGW Makefile* in the drop list.
 3. Once finished several variables will appear, the only one required to change is **CMAKE_INSTALL_PREFIX**.
 Set this to the location you wish to install the software.
