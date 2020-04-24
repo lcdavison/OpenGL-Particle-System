@@ -158,7 +158,7 @@ int main ( )
 
 	//	Load textures
 	{
-		TextureLoader loader ( "./textures/fire-test.png" );
+		TextureLoader loader ( "./textures/fire.png" );
 		loader.load ( );
 
 		_fire_texture = loader.get_texture ( );
