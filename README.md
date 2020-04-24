@@ -19,3 +19,14 @@ Set this to the location you wish to install the software.
 6. Open a **Command Prompt** or **Powershell** window in the *build* directory
 7. Run ``mingw32-make install``
 8. The software will now be ready to run from the *install* directory
+
+## Screenshots
+
+### Single Burst Particle System
+![Single Burst](./images/burst-particles.PNG)
+
+### Fire Particle System
+![Fire](./images/fire-particles.PNG)
+
+### Explosions Particle System
+![Explosions](./images/explosion-particles.PNG)
