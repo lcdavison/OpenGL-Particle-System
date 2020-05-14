@@ -159,14 +159,26 @@ int main ( )
 	//	Load textures
 	{
 		TextureLoader loader ( "./textures/fire.png" );
-		loader.load ( );
+		bool result = loader.load ( );
+
+		if ( !result )
+		{
+			std::cout << "Failed to load texture : fire.png" << std::endl;
+			return -1;
+		}
 
 		_fire_texture = loader.get_texture ( );
 	}
 
 	{
 		TextureLoader loader ( "./textures/firework.png" );
-		loader.load ( );
+		bool result = loader.load ( );
+
+		if ( !result )
+		{
+			std::cout << "Failed to load texture : firework.png" << std::endl;
+			return -1;
+		}
 
 		_firework_texture = loader.get_texture ( );
 	}

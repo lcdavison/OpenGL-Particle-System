@@ -5,11 +5,6 @@ TextureLoader::TextureLoader ( const std::string& p_filename )
 	//	Open PNG file for reading
 	m_file_ptr = fopen ( p_filename.c_str ( ), "rb" );
 
-	if ( !m_file_ptr )
-	{
-		std::cerr << "Failed to open file" << std::endl;
-	}
-
 	m_texture_ptr = new Texture;
 }
 
@@ -26,6 +21,13 @@ TextureLoader::~TextureLoader ( )
 
 bool TextureLoader::load ( )
 {
+	//	Check file opened successfully
+	if ( !m_file_ptr )
+	{
+		std::cerr << "Failed to open file" << std::endl;
+		return false;
+	}
+
 	//	Read signature
 	unsigned char signature [ 8 ];
 	fread ( signature, 8, 1, m_file_ptr );
@@ -33,6 +35,7 @@ bool TextureLoader::load ( )
 	if ( !png_check_sig ( signature, 8 ) )
 	{
 		std::cerr << "Not PNG file" << std::endl;
+		return false;
 	}
 
 	//	Setup libpng
@@ -62,6 +65,8 @@ bool TextureLoader::load ( )
 	}
 
 	png_destroy_read_struct ( &png_read, &png_info, NULL );
+
+	return true;
 }
 
 Texture* TextureLoader::get_texture ( )
